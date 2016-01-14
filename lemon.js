@@ -1,116 +1,119 @@
-"use strict"
+"use strict";
+
 function DaySelection7(){
-	for(daysleft=7;daysleft>0;daysleft-1);
+	for(var daysleft=7; daysleft>0; daysleft = daysleft-1){
+
+	}
+		
 }
 function DaySelection14(){
-	for(daysleft=14;daysleft>0;daysleft-1);
+	for(var daysleft=14;daysleft>0; daysleft--);
 }
 function DaySelection21(){
-	for(daysleft=21;daysleft>0;daysleft-1);
+	for(var daysleft=21;daysleft>0; --daysleft);
+}
+{
+	console.log("WEATHER TODAY")
 }
 function WeatherGenerator(){
 
-var randomnumber;
-var weatherstatus;
+	var weatherstatus;
 
-randomnumber = Math.floor(Math.random() * (100 - 1 + 1)) + 0;
+	var randomnumber = Math.floor(Math.random() * (100 - 1 + 1)) + 0;
 
 	if (randomnumber <=25){
-		console.log ("sunny");
-    weatherstatus = "sunny";
+		console.log ("Sunny");
+    weatherstatus = "Sunny";
   	}
-	else if (randomnumber>25 && randomnumber <55){
-		console.log ("rain");
-    weatherstatus = "rain";
+	else if (randomnumber>25 && randomnumber <=55){
+		console.log ("Rain");
+    weatherstatus = "Rain";
 	}
-	else if (randomnumber>55 && randomnumber <80){
-		console.log ("cloud");
-    weatherstatus = "cloud";
+	else if (randomnumber>55 && randomnumber <=80){
+		console.log ("Cloud");
+    weatherstatus = "Cloud";
 	}
-	else if (randomnumber>80 && randomnumber <100){
-		console.log ("storm");
-    weatherstatus = "storm";
+	else if (randomnumber>80 && randomnumber <=100){
+		console.log ("Storm");
+    weatherstatus = "Storm";
 	}
+
 		return randomnumber;
- }
- var weatherstatus;
-	weatherstatus=WeatherGenerator();
+ 	}
+ 	var weatherstatus;
+		weatherstatus=WeatherGenerator();
 
 function TemperatureGenerator(){
 	var randomnumber;
 	var temperaturestatus;
 
-randomnumber = Math.floor(Math.random() * (100 - 1 + 1)) + 0;
-temperaturestatus;
+	randomnumber = Math.floor(Math.random() * (100 - 1 + 1)) + 0;
+	temperaturestatus;
 	if (randomnumber <=25){
-		console.log ("It's cold outside!");
+		console.log ("It's Cold outside!");
     temperaturestatus = "cold";
   	}
-	else if (randomnumber>25 && randomnumber <=50){
-		console.log ("It's warm outside!");
+	else if (randomnumber>25 && randomnumber <=55){
+		console.log ("It's Warm outside!");
    temperaturestatus = "warm";
 	}
 	else if (randomnumber>55 && randomnumber <=75){
-		console.log ("It's hot outside!");
+		console.log ("It's Hot outside!");
     temperaturestatus = "hot";
 	}
 	else if (randomnumber>75 && randomnumber <=100){
 		console.log ("It's VERY hot outside!");
     temperaturestatus = "VERY hot";
 	}
+
 		return randomnumber;
- }
-  var temperaturestatus;
-	temperaturestatus=TemperatureGenerator();
+ 	}
+  	var temperaturestatus;
+		temperaturestatus=TemperatureGenerator();
 
 function WeatherPrediction(){
-	var forecast
-	var random
-		forecast = ["bad","okay","great"];
-		random = forecast[Math.floor(Math.random() *forecast.length)];
-		console.log(random);
-		return forecast;
+	console.log("FORECAST TOMORROW!")
+	var weather = WeatherGenerator();
+	var temperature = TemperatureGenerator();
+	var prediction = (weatherstatus,temperaturestatus);
+		
+		return prediction;
 }
-WeatherPrediction();
+	var predictionstatus;
+		predictionstatus =WeatherPrediction();
 
-function CupsBought(){
-	var numberofcups;
-	numberofcups = prompt("enter # of cups to buy"); 
-		return numberofcups;
-}
-CupsBought();
+
 
 function LemonsBought(){
 	var numberoflemons;
 	numberoflemons = prompt("enter # of lemons to buy"); 
+		console.log("you bought", numberoflemons, "lemons!");
 		return numberoflemons;
 }
-LemonsBought();
+	var resultlemons;
+	resultlemons = LemonsBought();
 
-function SugarBought(){
-	var numberofsugar;
-	numberofsugar = prompt("enter # of sugar to buy"); 
-		return numberofsugar;
+function SetPriceLemons(){
+var price;
+	price = (.12)
+	return price;
 }
-SugarBought();
+	var pricelemons;
+		pricelemons = SetPriceLemons();
 
-function IceBought(){
-	var numberofice;
-	numberofice = prompt("enter # of ice to buy"); 
-		return numberofice;
+function CurrentMoney(lemonsbought,setpricelemons){
+	var money = (20);
+	var moneyremain = money - setpricelemons*lemonsbought
+		console.log("you currently have", moneyremain, "left...")
+		return money;
 }
-IceBought();
+	var moneyleft;
+		moneyleft = CurrentMoney(resultlemons,pricelemons);
 
-function CupsToMake(){
-	var cups;
-	cups = prompt("enter # of cups to make")
-		return cups;
+function SetPriceSugar(){
+	var price;
+	price = (.08) 
+		return price;
 }
-CupsToMake();
-
-function PitchersToMake(){
-	var pitchers;
-	pitchers = prompt("enter # of pitchers to make")
-		return pitchers;
-}
-PitchersToMake();
+	var pricesugar;
+		pricesugar = SetPriceSugar();
